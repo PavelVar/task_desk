@@ -1,0 +1,39 @@
+@import "../sass/fonts.scss";
+@import "../sass/form.scss";
+@import "../sass/tables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  font-size: 100%;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 15px;
+}
+
+button {
+  font-size: 20px;
+  padding: 5px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: hsla(29, 94%, 50%, 0.726);
+  border-radius: 10px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px;
+  background-color: hsla(29, 94%, 50%, 1);
+}

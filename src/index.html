@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-form">
+        <div class="wrap-form">
+          <form id="task-form">
+            <div class="form-part">
+              <label for="text">Task text</label>
+              <input type="text" id="text" />
+            </div>
+            <div class="form-part">
+              <label for="responsible">Responsible person</label>
+              <input type="text" id="responsible" />
+            </div>
+            <div class="form-part">
+              <label for="date">Deadline</label> <input type="date" id="date" />
+            </div>
+            <div class="form-part">
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority" form="task-form" size="">
+                <option value="high">high</option>
+                <option value="medium">medium</option>
+                <option value="low">low</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="wrap-btn">
+          <button>Add task</button>
+        </div>
+      </div>
+      <div class="tables">
+        <div class="table" id="table-todo">
+          <div class="table-head">
+            <h3>To Do list</h3>
+          </div>
+          <div class="task">
+            <div class="task-wrap">
+              <div class="task-text">
+                <p data-task_text="">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+              </div>
+              <div class="wrap-btns">
+                <button id="btn-del">Delete</button>
+                <button id="btn-updt">Update</button>
+                <button id="btn-next">Move next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table" id="table-inprocess">
+          <div class="table-head">
+            <h3>In process</h3>
+          </div>
+          <div class="task">
+            <div class="task-wrap">
+              <div class="task-text">
+                <p data-task_text="">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+              </div>
+              <div class="wrap-btns">
+                <button id="btn-del">Delete</button>
+                <button id="btn-updt">Update</button>
+                <button id="btn-back">Back</button>
+                <button id="btn-next">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table" id="table-done">
+          <div class="table-head">
+            <h3>Done</h3>
+          </div>
+          <div class="task">
+            <div class="task-wrap">
+              <div class="task-text">
+                <p data-task_text="">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+              </div>
+              <div class="wrap-btns">
+                <button id="btn-del">Delete</button>
+                <button id="btn-updt">Update</button>
+                <button id="btn-back">Back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
