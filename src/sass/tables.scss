@@ -2,7 +2,7 @@
   border: 1px solid hsla(29, 94%, 50%, 1);
   border-radius: 10px;
   background-color: hsla(29, 94%, 50%, 0.726);
-  height: 500px;
+  // height: 500px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -25,9 +25,31 @@
         border-radius: 10px;
         border: 1px solid hsla(29, 94%, 50%, 1);
         background-color: white;
+        .number {
+          font-size: 14px;
+        }
         .task-text {
           text-align: center;
           margin-bottom: 10px;
+        }
+        .task-data {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          span {
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid hsla(29, 94%, 50%, 1);
+          }
+        }
+        .task-responsible {
+          margin-bottom: 20px;
+          text-align: center;
+          span {
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid hsla(29, 94%, 50%, 1);
+          }
         }
         .wrap-btns {
           display: flex;
