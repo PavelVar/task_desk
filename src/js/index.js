@@ -31,7 +31,8 @@ function getTask() {
   TASK_DATE.value = "";
   TASK_PRIOR.value = "";
 
-  addToDo(toDoTasks.get(num), num, "done");
+  addToDo(toDoTasks.get(num), num, "todo");
+  return toDoTasks;
 }
 
 BTN_INPUT.onclick = getTask;

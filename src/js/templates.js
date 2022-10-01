@@ -1,4 +1,5 @@
 import { delTask } from "./deletes.js";
+import { moveTask } from "./deletes.js";
 
 export function addToDo(task, key, place) {
   if (place == "todo") {
@@ -18,26 +19,34 @@ export function addToDo(task, key, place) {
   taskWrapBlock.classList.add("task-wrap");
 
   let numberBlock = document.createElement("div");
-  numberBlock.classList.add("number");
+  numberBlock.classList.add("task-number");
 
   let numSpanBlock = document.createElement("span");
+  numSpanBlock.dataset.elid = key;
 
   let taskTextBlock = document.createElement("div");
   taskTextBlock.classList.add("task-text");
 
   let pBlock = document.createElement("p");
   pBlock.classList.add("data-task_text");
+  pBlock.dataset.elid = key;
 
   let taskData = document.createElement("div");
   taskData.classList.add("task-data");
 
   let spanDataBlock = document.createElement("span");
+  spanDataBlock.classList.add("task-date");
+  spanDataBlock.dataset.elidDate = key;
   let spanPriorityBlock = document.createElement("span");
+  spanPriorityBlock.classList.add("task-prior");
+  spanPriorityBlock.dataset.elidPrior = key;
 
   let taskResponsible = document.createElement("div");
   taskResponsible.classList.add("task-responsible");
 
   let spanResponsibleBlock = document.createElement("span");
+  spanResponsibleBlock.classList.add("responsible");
+  spanResponsibleBlock.dataset.elidResp = key;
 
   let wrapBtnsBlock = document.createElement("div");
   wrapBtnsBlock.classList.add("wrap-btns");
@@ -82,5 +91,10 @@ export function addToDo(task, key, place) {
   let BTN_DEL = document.querySelectorAll("#btn-del");
   BTN_DEL.forEach((item) => {
     item.addEventListener("click", delTask);
+  });
+
+  let BTN_NEXT = document.querySelectorAll("#btn-next");
+  BTN_NEXT.forEach((item) => {
+    item.addEventListener("click", moveTask);
   });
 }
