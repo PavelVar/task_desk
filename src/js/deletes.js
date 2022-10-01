@@ -29,8 +29,14 @@ export function moveTask(event) {
       task.responsible = i.textContent;
     }
   }
-  console.log(task);
 
-  addToDo(task, elID, "done");
+  table = event.target.closest(".table");
+  if ((table = "table-todo")) {
+    place = "in";
+  } else if ((table = "table-inprocess")) {
+    place = "done";
+  }
+
+  addToDo(task, elID, place);
   delTask(event);
 }
