@@ -2,15 +2,7 @@ import { delTask } from "./deletes.js";
 import { moveTask } from "./deletes.js";
 
 export function addToDo(task, key, place) {
-  if (place == "todo") {
-    place = ".tasks#tasks-todo";
-  } else if (place == "in") {
-    place = ".tasks#tasks-inprocess";
-  } else if (place == "done") {
-    place = ".tasks#tasks-done";
-  }
-
-  let table = document.querySelector(place);
+  // html for all tables
 
   let taskBlock = document.createElement("div");
   taskBlock.classList.add("task");
@@ -54,26 +46,57 @@ export function addToDo(task, key, place) {
   let btnDelBlock = document.createElement("button");
   btnDelBlock.setAttribute("id", "btn-del");
 
-  let btnUpdtBlock = document.createElement("button");
-  btnUpdtBlock.setAttribute("id", "btn-updt");
+  // additional buttons for html
+  if (place == "todo") {
+    place = ".tasks#tasks-todo";
+    addCommonHtml();
+    addNextBtn();
+  } else if (place == "in") {
+    place = ".tasks#tasks-inprocess";
+    addCommonHtml();
+    addBackBtn();
+    addNextBtn();
+  } else if (place == "done") {
+    place = ".tasks#tasks-done";
+    addCommonHtml();
+    addBackBtn();
+  }
 
-  let btnNextBlock = document.createElement("button");
-  btnNextBlock.setAttribute("id", "btn-next");
+  function addCommonHtml() {
+    let table = document.querySelector(place);
+    table.append(taskBlock);
+    taskBlock.append(taskWrapBlock);
+    taskWrapBlock.append(numberBlock);
+    numberBlock.append(numSpanBlock);
+    taskWrapBlock.append(taskTextBlock, taskData, taskResponsible);
+    taskTextBlock.append(pBlock);
+    taskWrapBlock.append(wrapBtnsBlock);
+    wrapBtnsBlock.append(btnDelBlock);
+    taskData.append(spanDataBlock, spanPriorityBlock);
+    taskResponsible.append(spanResponsibleBlock);
+  }
 
-  table.append(taskBlock);
-  taskBlock.append(taskWrapBlock);
-  taskWrapBlock.append(numberBlock);
-  numberBlock.append(numSpanBlock);
-  taskWrapBlock.append(taskTextBlock, taskData, taskResponsible);
-  taskTextBlock.append(pBlock);
-  taskWrapBlock.append(wrapBtnsBlock);
-  wrapBtnsBlock.append(btnDelBlock, btnUpdtBlock, btnNextBlock);
-  taskData.append(spanDataBlock, spanPriorityBlock);
-  taskResponsible.append(spanResponsibleBlock);
+  function addBackBtn() {
+    let btnBackBlock = document.createElement("button");
+    btnBackBlock.setAttribute("id", "btn-back");
+    wrapBtnsBlock.append(btnBackBlock);
+    btnBackBlock.textContent = "Back";
+  }
+
+  function addNextBtn() {
+    let btnNextBlock = document.createElement("button");
+    btnNextBlock.setAttribute("id", "btn-next");
+    wrapBtnsBlock.append(btnNextBlock);
+    btnNextBlock.textContent = "Move next";
+  }
+  // function addUpdtBtn() {
+  // let btnUpdtBlock = document.createElement("button");
+  // btnUpdtBlock.setAttribute("id", "btn-updt");
+  // }
 
   btnDelBlock.textContent = "Delete";
-  btnUpdtBlock.textContent = "Update";
-  btnNextBlock.textContent = "Move next";
+  // btnUpdtBlock.textContent = "Update";
+
   pBlock.textContent = task.text;
   numSpanBlock.textContent = key;
   spanDataBlock.textContent = task.date;
