@@ -1,5 +1,4 @@
 import { addToDo } from "./templates.js";
-import { toDoTasks } from "./index.js";
 
 export function delTask(event) {
   event.target.closest(".task").remove();
@@ -30,10 +29,10 @@ export function moveTask(event) {
     }
   }
 
-  table = event.target.closest(".table");
-  if ((table = "table-todo")) {
+  table = event.target.closest(".table").id;
+  if (table == "table-todo") {
     place = "in";
-  } else if ((table = "table-inprocess")) {
+  } else if (table == "table-inprocess") {
     place = "done";
   }
 
