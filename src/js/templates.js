@@ -1,5 +1,6 @@
 import { delTask } from "./deletes.js";
-import { moveTask } from "./deletes.js";
+import { moveTask } from "./next.js";
+import { backTask } from "./back.js";
 
 export function addToDo(task, key, place) {
   // html for all tables
@@ -119,5 +120,10 @@ export function addToDo(task, key, place) {
   let BTN_NEXT = document.querySelectorAll("#btn-next");
   BTN_NEXT.forEach((item) => {
     item.addEventListener("click", moveTask);
+  });
+
+  let BTN_BACK = document.querySelectorAll("#btn-back");
+  BTN_BACK.forEach((item) => {
+    item.addEventListener("click", backTask);
   });
 }
