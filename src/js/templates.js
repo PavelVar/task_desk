@@ -1,6 +1,7 @@
 import { delTask } from "./deletes.js";
 import { moveTask } from "./next.js";
 import { backTask } from "./back.js";
+import { countTasks } from "./count.js";
 
 export function addToDo(task, key, place) {
   // html for all tables
@@ -126,4 +127,6 @@ export function addToDo(task, key, place) {
   BTN_BACK.forEach((item) => {
     item.addEventListener("click", backTask);
   });
+
+  countTasks();
 }

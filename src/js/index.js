@@ -8,9 +8,9 @@ const TASK_DATE = document.querySelector("input#date");
 const TASK_PRIOR = document.querySelector("select#priority");
 
 let toDoTasks = new Map();
-let InProcessTasks = new Map();
-let DoneTasks = new Map();
-// let nums = new Array();
+// let InProcessTasks = new Map();
+// let DoneTasks = new Map();
+
 let num = 1;
 
 function getTask() {
