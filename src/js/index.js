@@ -19,20 +19,30 @@ function getTask() {
   }
 
   let newTask = new Object();
-  newTask.text = TASK_TEXT.value;
-  newTask.responsible = TASK_RESPONSIBLE.value;
-  newTask.date = TASK_DATE.value;
-  newTask.priority = TASK_PRIOR.value;
 
-  toDoTasks.set(num, newTask);
+  if (
+    TASK_TEXT.value == "" ||
+    TASK_RESPONSIBLE.value == "" ||
+    TASK_DATE.value == "" ||
+    TASK_PRIOR.value == ""
+  ) {
+    alert("No empty fields allowed. Check.");
+  } else {
+    newTask.text = TASK_TEXT.value;
+    newTask.responsible = TASK_RESPONSIBLE.value;
+    newTask.date = TASK_DATE.value;
+    newTask.priority = TASK_PRIOR.value;
 
-  TASK_TEXT.value = "";
-  TASK_RESPONSIBLE.value = "";
-  TASK_DATE.value = "";
-  TASK_PRIOR.value = "";
+    toDoTasks.set(num, newTask);
 
-  addToDo(toDoTasks.get(num), num, "todo");
-  return toDoTasks;
+    TASK_TEXT.value = "";
+    TASK_RESPONSIBLE.value = "";
+    TASK_DATE.value = "";
+    TASK_PRIOR.value = "";
+
+    addToDo(toDoTasks.get(num), num, "todo");
+    return toDoTasks;
+  }
 }
 
 BTN_INPUT.onclick = getTask;
