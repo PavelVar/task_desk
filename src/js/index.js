@@ -1,5 +1,19 @@
 import { addToDo } from "./templates.js";
 
+const BTN_START = document.querySelector(".btn-start");
+const ADD_FORM = document.querySelector(".input-form");
+const BTN_EXIT = document.querySelector(".exit");
+
+BTN_START.addEventListener("click", () => {
+  ADD_FORM.classList.toggle("active");
+  BTN_START.classList.toggle("active");
+});
+
+BTN_EXIT.addEventListener("click", () => {
+  ADD_FORM.classList.toggle("active");
+  BTN_START.classList.toggle("active");
+});
+
 const BTN_INPUT = document.querySelector(".btn-input");
 
 const TASK_TEXT = document.querySelector("input#text");
@@ -38,9 +52,11 @@ function getTask() {
     TASK_TEXT.value = "";
     TASK_RESPONSIBLE.value = "";
     TASK_DATE.value = "";
-    TASK_PRIOR.value = "";
+    TASK_PRIOR.value = "high";
 
     addToDo(toDoTasks.get(num), num, "todo");
+    ADD_FORM.classList.toggle("active");
+    BTN_START.classList.toggle("active");
     return toDoTasks;
   }
 }

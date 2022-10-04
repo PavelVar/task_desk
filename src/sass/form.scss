@@ -1,3 +1,15 @@
+.wrap-btn-start {
+  margin-bottom: 20px;
+}
+
+.btn-start.active {
+  display: none;
+}
+
+.input-form.active {
+  display: none;
+}
+
 .input-form {
   padding: 15px;
   margin-bottom: 20px;
@@ -11,6 +23,7 @@
       display: flex;
       justify-content: space-around;
       border-radius: 10px;
+
       label {
         display: block;
       }
@@ -19,6 +32,12 @@
       }
       select {
         font-size: 20px;
+      }
+      .exit {
+        font-size: 24px;
+      }
+      .exit:hover {
+        cursor: pointer;
       }
     }
   }
