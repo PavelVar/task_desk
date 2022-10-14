@@ -1,3 +1,5 @@
+import { toDoTasks } from "./1_base";
+
 export function countTasks() {
   let tasksToDo = document.querySelector("#tasks-todo");
   let toDoChildren = tasksToDo.children;
