@@ -1,11 +1,9 @@
-import { toDoTasks } from "./1_base";
-import { inProcTasks } from "./1_base";
-import { doneTasks } from "./1_base";
 import { renderTemplate } from "./3_render_todo";
 import { delTask } from "./4_del.js";
 import { countTasks } from "./count.js";
 import { moveTask } from "./5_next.js";
 import { backTask } from "./6_back.js";
+import { addToLocalStorage } from "./7_add_to_local_stor.js";
 
 tableName = "";
 
@@ -39,12 +37,5 @@ export function addTask(task, place) {
 
   countTasks();
 
-  console.log(toDoTasks);
-  let toDoJSON = JSON.stringify(toDoTasks);
-  let inProcJSON = JSON.stringify(inProcTasks);
-  let doneJSON = JSON.stringify(doneTasks);
-  console.log(toDoJSON);
-  localStorage.setItem("tasksToDo", toDoJSON);
-  localStorage.setItem("tasksInProc", inProcJSON);
-  localStorage.setItem("tasksDone", doneJSON);
+  addToLocalStorage();
 }

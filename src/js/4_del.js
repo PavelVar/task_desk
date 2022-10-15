@@ -2,9 +2,12 @@ import { countTasks } from "./count.js";
 import { toDoTasks } from "./1_base";
 import { inProcTasks } from "./1_base";
 import { doneTasks } from "./1_base";
+import { addToLocalStorage } from "./7_add_to_local_stor.js";
 
 export function delTask(event) {
   id = Number(event.target.dataset.elid);
+
+  table = event.target.closest(".table").id;
 
   event.target.closest(".task").remove();
 
@@ -21,11 +24,5 @@ export function delTask(event) {
 
   countTasks();
 
-  let toDoJSON = JSON.stringify(toDoTasks);
-  let inProcJSON = JSON.stringify(inProcTasks);
-  let doneJSON = JSON.stringify(doneTasks);
-
-  localStorage.setItem("tasksToDo", toDoJSON);
-  localStorage.setItem("tasksInProc", inProcJSON);
-  localStorage.setItem("tasksDone", doneJSON);
+  addToLocalStorage();
 }

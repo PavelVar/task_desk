@@ -1,4 +1,6 @@
 import { addTask } from "./2_add_tasks";
+import { getDataFromLocalStorage } from "./8_get_local_storage.js";
+import { findNum } from "./9_num.js";
 
 const BTN_START_ADD_TASK = document.querySelector(".btn-start");
 const FORM_ADD_TASK = document.querySelector(".input-form");
@@ -36,8 +38,14 @@ function createTask(id, text, responsible, date, priority) {
 }
 
 function addToDo() {
+  res = findNum();
+  if (res) {
+    num = res;
+  } else {
+    num++;
+  }
   // while (toDoTasks.has(num)) {
-  num++;
+  // num++;
   // }
 
   let taskText = TASK_TEXT.value;
@@ -73,5 +81,7 @@ function addToDo() {
     BTN_START_ADD_TASK.classList.toggle("active");
   }
 }
+
+getDataFromLocalStorage();
 
 BTN_ADD_TASK.onclick = addToDo;
