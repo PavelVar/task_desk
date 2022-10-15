@@ -30,12 +30,27 @@ export function renderTemplate(task, place) {
                           </div>
                         </div>
                       </div>`;
+  const htmlForInProcess = `
+                          <div class="wrap-btns" data-elid=${task.id}>
+                            <button id="btn-del" data-elid=${task.id}>Delete</button>
+                            <button id="btn-back" data-elid=${task.id}>Back</button>
+                            <button id="btn-next" data-elid=${task.id}>Move next</button>
+                          </div>
+                        </div>
+                      </div>`;
+  const htmlForDone = `
+                          <div class="wrap-btns" data-elid=${task.id}>
+                            <button id="btn-del" data-elid=${task.id}>Delete</button>
+                            <button id="btn-back" data-elid=${task.id}>Back</button>
+                          </div>
+                        </div>
+                      </div>`;
 
   if (place == "todo") {
     return htmlForAll + htmlForToDo;
   } else if (place == "in") {
-    return htmlForAll + htmlForToDo;
+    return htmlForAll + htmlForInProcess;
   } else if (place == "done") {
-    return htmlForAll + htmlForToDo;
+    return htmlForAll + htmlForDone;
   }
 }

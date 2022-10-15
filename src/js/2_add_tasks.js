@@ -2,6 +2,7 @@
 import { renderTemplate } from "./3_render_todo";
 import { delTask } from "./deletes.js";
 import { countTasks } from "./count.js";
+import { moveTask } from "./next.js";
 
 tableName = "";
 
@@ -22,6 +23,11 @@ export function addTask(task, place) {
     item.addEventListener("click", (item) => {
       delTask(item, task.id);
     });
+  });
+
+  let BTN_NEXT = document.querySelectorAll("#btn-next");
+  BTN_NEXT.forEach((item) => {
+    item.addEventListener("click", moveTask);
   });
 
   countTasks();
