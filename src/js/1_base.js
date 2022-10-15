@@ -22,8 +22,8 @@ const TASK_DATE = document.querySelector("input#date");
 const TASK_PRIOR = document.querySelector("select#priority");
 
 export let toDoTasks = new Map();
-export let inProcTasks = new Array();
-export let doneTasks = new Array();
+export let inProcTasks = new Map();
+export let doneTasks = new Map();
 
 let num = 0;
 

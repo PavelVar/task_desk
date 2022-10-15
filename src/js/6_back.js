@@ -4,19 +4,19 @@ import { toDoTasks } from "./1_base";
 import { inProcTasks } from "./1_base";
 import { doneTasks } from "./1_base";
 
-export function moveTask(event) {
+export function backTask(event) {
   let elID = Number(event.target.dataset.elid);
 
   table = event.target.closest(".table").id;
 
-  if (table == "table-todo") {
+  if (table == "table-done") {
     place = "in";
-    task = toDoTasks.get(elID);
+    task = doneTasks.get(elID);
     inProcTasks.set(elID, task);
   } else if (table == "table-inprocess") {
-    place = "done";
+    place = "todo";
     task = inProcTasks.get(elID);
-    doneTasks.set(elID, task);
+    toDoTasks.set(elID, task);
   }
 
   addTask(task, place);
