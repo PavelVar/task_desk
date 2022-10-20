@@ -11,78 +11,115 @@
     border-radius: 10px;
     background-color: wheat;
     width: 30%;
+
+    background: url("../img/dark-night-sky.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
     .table-head {
       border-bottom: 4px solid hsla(29, 94%, 50%, 1);
       padding: 5px;
       h3 {
         text-align: center;
+        // color: white;
       }
     }
-    .task {
-      padding: 10px;
-      .task-wrap {
+    .tasks {
+      .task {
+        animation-name: hide;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+
         padding: 10px;
-        border-radius: 10px;
-        border: 1px solid hsla(29, 94%, 50%, 1);
-        background-color: white;
-        .number {
-          font-size: 14px;
-        }
-        .task-text {
-          text-align: center;
-          margin-bottom: 10px;
-        }
-        .task-data {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 10px;
-          span {
-            padding: 5px;
-            border-radius: 10px;
-            border: 1px solid hsla(29, 94%, 50%, 1);
+
+        .task-wrap {
+          backdrop-filter: blur(16px) saturate(180%);
+          -webkit-backdrop-filter: blur(16px) saturate(180%);
+          background-color: rgba(17, 25, 40, 0.75);
+
+          padding: 10px;
+          border-radius: 10px;
+          // border: 1px solid hsla(29, 94%, 50%, 1);
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          // background-color: white;
+          .number {
+            font-size: 14px;
           }
-        }
-        .task-responsible {
-          margin-bottom: 20px;
-          text-align: center;
-          span {
-            padding: 5px;
-            border-radius: 10px;
-            border: 1px solid hsla(29, 94%, 50%, 1);
+          .task-text {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 600;
           }
-        }
-        .wrap-btns {
-          display: flex;
-          justify-content: space-between;
-          button {
-            font-size: 16px;
-          }
-          #btn-del {
-            background-color: lightcoral;
-            &:hover {
-              background-color: red;
+          .task-data {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            span {
+              padding: 5px;
+              border-radius: 10px;
+              border: 1px solid hsla(29, 94%, 50%, 1);
             }
           }
-          #btn-updt {
-            background-color: rgb(248, 248, 47);
-            &:hover {
-              background-color: yellow;
+          .task-responsible {
+            margin-bottom: 20px;
+            text-align: center;
+            span {
+              padding: 5px;
+              border-radius: 10px;
+              border: 1px solid hsla(29, 94%, 50%, 1);
             }
           }
-          #btn-next {
-            background-color: lightgreen;
-            &:hover {
-              background-color: lime;
+          .wrap-btns {
+            display: flex;
+            justify-content: space-between;
+            button {
+              font-size: 16px;
             }
-          }
-          #btn-back {
-            background-color: rgb(247, 223, 8);
-            &:hover {
-              background-color: orange;
+            #btn-del {
+              background-color: lightcoral;
+              &:hover {
+                background-color: red;
+              }
+            }
+            #btn-updt {
+              background-color: rgb(248, 248, 47);
+              &:hover {
+                background-color: yellow;
+              }
+            }
+            #btn-next {
+              background-color: lightgreen;
+              &:hover {
+                background-color: lime;
+              }
+            }
+            #btn-back {
+              background-color: rgb(247, 223, 8);
+              &:hover {
+                background-color: orange;
+              }
             }
           }
         }
       }
     }
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+  75% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    height: 0%;
   }
 }

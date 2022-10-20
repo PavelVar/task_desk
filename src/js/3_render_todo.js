@@ -17,7 +17,7 @@ export function renderTemplate(task, place) {
                           </div>
                           <div class="task-data" data-elid=${task.id}>
                             <span class="task-date" data-elid=${task.id}>${task.date}</span>
-                            <span class="task-prior" data-elid-prior=${task.id} style="background: ${color};">${task.priority}</span>
+                            <span class="task-prior" data-elid-prior=${task.id} style="background: ${color}; color: black;">${task.priority}</span>
                           </div>
                           <div class="task-responsible" data-elid=${task.id}>
                             <span class="responsible" data-elid-resp=${task.id}>${task.responsible}</span>

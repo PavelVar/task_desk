@@ -9,20 +9,40 @@ export function delTask(event) {
 
   table = event.target.closest(".table").id;
 
-  event.target.closest(".task").remove();
+  element = event.target.closest(".task");
+  console.log(element);
+  element.style.animationPlayState = "running";
+  element.addEventListener("animationend", () => {
+    element.remove();
+    if (table == "table-todo") {
+      toDoTasks.delete(id);
+      // console.log(toDoTasks);
+    } else if (table == "table-inprocess") {
+      inProcTasks.delete(id);
+      // console.log(inProcTasks);
+    } else if (table == "table-done") {
+      doneTasks.delete(id);
+      // console.log(doneTasks);
+    }
 
-  if (table == "table-todo") {
-    toDoTasks.delete(id);
-    // console.log(toDoTasks);
-  } else if (table == "table-inprocess") {
-    inProcTasks.delete(id);
-    // console.log(inProcTasks);
-  } else if (table == "table-done") {
-    doneTasks.delete(id);
-    // console.log(doneTasks);
-  }
+    countTasks();
 
-  countTasks();
+    addToLocalStorage();
+  });
+  // event.target.closest(".task").remove();
 
-  addToLocalStorage();
+  // if (table == "table-todo") {
+  //   toDoTasks.delete(id);
+  //   // console.log(toDoTasks);
+  // } else if (table == "table-inprocess") {
+  //   inProcTasks.delete(id);
+  //   // console.log(inProcTasks);
+  // } else if (table == "table-done") {
+  //   doneTasks.delete(id);
+  //   // console.log(doneTasks);
+  // }
+
+  // countTasks();
+
+  // addToLocalStorage();
 }

@@ -7,6 +7,8 @@ import { addToLocalStorage } from "./7_add_to_local_stor.js";
 import { nums } from "./1_base";
 
 export function getDataFromLocalStorage() {
+  cleanTables();
+
   let toDo = localStorage.getItem("toDo");
   toDo = JSON.parse(toDo);
 
@@ -41,4 +43,11 @@ export function getDataFromLocalStorage() {
 
   let BTN_ADD = document.querySelector(".btn-input");
   BTN_ADD.onclick = addToDo;
+}
+
+function cleanTables() {
+  tasks = document.querySelectorAll(".task");
+  tasks.forEach((item) => {
+    item.remove();
+  });
 }
