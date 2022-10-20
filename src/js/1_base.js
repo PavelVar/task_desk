@@ -70,10 +70,10 @@ function addToDo() {
     );
     toDoTasks.set(num, newTask);
 
-    // TASK_TEXT.value = "";
-    // TASK_RESPONSIBLE.value = "";
-    // TASK_DATE.value = "";
-    // TASK_PRIOR.value = "high";
+    TASK_TEXT.value = "";
+    TASK_RESPONSIBLE.value = "";
+    TASK_DATE.value = "";
+    TASK_PRIOR.value = "high";
 
     addTask(newTask, "todo");
 

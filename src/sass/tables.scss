@@ -2,6 +2,10 @@
   border: 1px solid hsla(29, 94%, 50%, 1);
   border-radius: 10px;
   background-color: hsla(29, 94%, 50%, 0.726);
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
   // height: 500px;
   padding: 10px;
   display: flex;
