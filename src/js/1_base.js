@@ -61,24 +61,39 @@ function addToDo() {
   ) {
     alert("No empty fields allowed. Check, please.");
   } else {
-    let newTask = new createTask(
-      num,
-      taskText,
-      taskResponsible,
-      taskDate,
-      taskPriority
+    let today = new Date();
+    let date1 = new Date(
+      `${taskDate.substr(5, 2)}-${taskDate.substr(8, 2)}-${taskDate.substr(
+        0,
+        4
+      )}`
     );
-    toDoTasks.set(num, newTask);
+    let daysLag = Math.ceil(
+      Math.abs(today.getTime() - date1.getTime()) / (1000 * 3600 * 24)
+    );
+    console.log(daysLag);
+    if (daysLag >= 0) {
+      alert("False date. Check.");
+    } else {
+      let newTask = new createTask(
+        num,
+        taskText,
+        taskResponsible,
+        taskDate,
+        taskPriority
+      );
+      toDoTasks.set(num, newTask);
 
-    TASK_TEXT.value = "";
-    TASK_RESPONSIBLE.value = "";
-    TASK_DATE.value = "";
-    TASK_PRIOR.value = "high";
+      TASK_TEXT.value = "";
+      TASK_RESPONSIBLE.value = "";
+      TASK_DATE.value = "";
+      TASK_PRIOR.value = "high";
 
-    addTask(newTask, "todo");
+      addTask(newTask, "todo");
 
-    FORM_ADD_TASK.classList.toggle("active");
-    BTN_START_ADD_TASK.classList.toggle("active");
+      FORM_ADD_TASK.classList.toggle("active");
+      BTN_START_ADD_TASK.classList.toggle("active");
+    }
   }
 }
 

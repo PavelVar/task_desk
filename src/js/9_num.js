@@ -6,7 +6,7 @@ export function findNum() {
       numsList.push(element.dataset.elid);
     });
     numsList.sort();
-    console.log(numsList);
+    // console.log(numsList);
     return Number(numsList.pop()) + 1;
   } else {
     return false;
