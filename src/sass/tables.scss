@@ -1,5 +1,5 @@
 .tables {
-  border: 1px solid hsla(29, 94%, 50%, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   background-color: hsla(29, 94%, 50%, 0.726);
 
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   .table {
-    border: 1px solid hsla(29, 94%, 50%, 1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     background-color: wheat;
     width: 30%;
