@@ -16,6 +16,14 @@ html {
   color: white;
 }
 
+body {
+  background: url("../img/dark-night-sky.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .container {
   max-width: 1170px;
   margin: auto;
