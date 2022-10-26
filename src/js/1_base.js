@@ -62,17 +62,14 @@ function addToDo() {
     alert("No empty fields allowed. Check, please.");
   } else {
     let today = new Date();
-    let date1 = new Date(
+    let inputedDate = new Date(
       `${taskDate.substr(5, 2)}-${taskDate.substr(8, 2)}-${taskDate.substr(
         0,
         4
       )}`
     );
-    let daysLag = Math.ceil(
-      Math.abs(today.getTime() - date1.getTime()) / (1000 * 3600 * 24)
-    );
-    console.log(daysLag);
-    if (daysLag >= 0) {
+
+    if (today.getTime() > inputedDate.getTime()) {
       alert("False date. Check.");
     } else {
       let newTask = new createTask(

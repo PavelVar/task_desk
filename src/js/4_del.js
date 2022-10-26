@@ -10,7 +10,7 @@ export function delTask(event) {
   table = event.target.closest(".table").id;
 
   element = event.target.closest(".task");
-  console.log(element);
+  // console.log(element);
   element.style.animationPlayState = "running";
   element.addEventListener("animationend", () => {
     element.remove();
