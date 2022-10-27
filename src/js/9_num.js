@@ -8,7 +8,6 @@ export function findNum() {
     numsList.sort();
     // console.log(numsList);
     return Number(numsList.pop()) + 1;
-  } else {
-    return false;
   }
+  return false;
 }

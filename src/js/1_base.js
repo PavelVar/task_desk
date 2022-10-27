@@ -44,9 +44,6 @@ function addToDo() {
   } else {
     num++;
   }
-  // while (toDoTasks.has(num)) {
-  // num++;
-  // }
 
   let taskText = TASK_TEXT.value;
   let taskResponsible = TASK_RESPONSIBLE.value;
@@ -70,7 +67,7 @@ function addToDo() {
     );
 
     if (today.getTime() > inputedDate.getTime()) {
-      alert("False date. Check.");
+      alert("False date: supposed date is too early. Check.");
     } else {
       let newTask = new createTask(
         num,
