@@ -2,18 +2,22 @@ import { addTask } from "./2_add_tasks";
 import { getDataFromLocalStorage } from "./8_get_local_storage.js";
 import { findNum } from "./9_num.js";
 
+// Getting button to open task-add-form, task-add-form, button to exit task-add-form and table-desk
 const BTN_START_ADD_TASK = document.querySelector(".btn-start");
 const FORM_ADD_TASK = document.querySelector(".input-form");
 const BTN_EXIT_TASK_FORM = document.querySelector(".exit");
+const TABLES = document.querySelector(".tables");
 
 BTN_START_ADD_TASK.addEventListener("click", () => {
   FORM_ADD_TASK.classList.toggle("active");
   BTN_START_ADD_TASK.classList.toggle("active");
+  TABLES.classList.toggle("nonactive");
 });
 
 BTN_EXIT_TASK_FORM.addEventListener("click", () => {
   FORM_ADD_TASK.classList.toggle("active");
   BTN_START_ADD_TASK.classList.toggle("active");
+  TABLES.classList.toggle("nonactive");
 });
 
 const BTN_ADD_TASK = document.querySelector(".btn-input");
@@ -38,6 +42,8 @@ function createTask(id, text, responsible, date, priority) {
 }
 
 function addToDo() {
+  TABLES.classList.toggle("nonactive");
+
   res = findNum();
   if (res) {
     num = res;

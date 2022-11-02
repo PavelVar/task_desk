@@ -9,34 +9,37 @@
   </head>
   <body>
     <div class="container">
+      <!-- Task add form -->
       <div class="wrap-btn-start">
         <button class="btn-start" type="button">Add new task</button>
       </div>
       <div class="input-form active">
         <div class="wrap-form">
           <form id="task-form">
-            <div class="form-part">
-              <label for="text">Task text</label>
-              <input type="text" id="text" />
-            </div>
-            <div class="form-part">
-              <label for="responsible">Responsible person</label>
-              <input type="text" id="responsible" />
-            </div>
-            <div class="form-part">
-              <label for="date">Deadline</label>
-              <input id="date" type="date" />
-            </div>
-            <div class="form-part">
-              <label for="priority">Priority</label>
-              <select name="priority" id="priority" form="task-form" size="">
-                <option value="high">high</option>
-                <option value="medium">medium</option>
-                <option value="low">low</option>
-              </select>
-            </div>
             <div class="exit">
               <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+            </div>
+            <div class="form-part" id="text-area">
+              <label for="text">Task text</label>
+              <input type="text" id="text" placeholder="Input you task" />
+            </div>
+            <div class="form-part" id="responsible">
+              <label for="responsible">Responsible person</label>
+              <input type="text" id="responsible" placeholder="Input someone" />
+            </div>
+            <div class="deadline_priority">
+              <div class="form-part">
+                <label for="date">Deadline</label>
+                <input id="date" type="date" />
+              </div>
+              <div class="form-part">
+                <label for="priority">Priority</label>
+                <select name="priority" id="priority" form="task-form" size="">
+                  <option value="high">high</option>
+                  <option value="medium">medium</option>
+                  <option value="low">low</option>
+                </select>
+              </div>
             </div>
           </form>
         </div>
@@ -46,6 +49,8 @@
           </button>
         </div>
       </div>
+
+      <!-- Table with tasks -->
       <div class="tables">
         <div class="table" id="table-todo">
           <div class="table-head">

@@ -11,6 +11,7 @@
 }
 
 .input-form {
+  min-height: 30%;
   padding: 15px;
   margin-bottom: 20px;
   .wrap-form {
@@ -20,21 +21,46 @@
       margin: auto;
       width: 80%;
       background-color: hsla(29, 94%, 50%, 0.726);
-      display: flex;
-      justify-content: space-around;
+      // display: flex;
+      // justify-content: space-around;
       border-radius: 10px;
 
-      label {
-        display: block;
+      .form-part {
+        margin-bottom: 20px;
+
+        #text {
+          width: 90%;
+          height: 90%;
+        }
+
+        label {
+          display: block;
+        }
+        input {
+          font-size: 20px;
+          border-radius: 10px;
+          padding: 5px;
+        }
+        select {
+          font-size: 20px;
+          border-radius: 10px;
+          padding: 5px;
+        }
       }
-      input {
-        font-size: 20px;
+      .form-part#text-area {
+        text-align: center;
+        height: 80px;
+        margin-bottom: 30px;
       }
-      select {
-        font-size: 20px;
+      .form-part#responsible {
+        text-align: center;
+        height: 80px;
+        margin-bottom: 10px;
       }
       .exit {
+        text-align: right;
         font-size: 24px;
+        // margin-bottom: 10px;
       }
       .exit:hover {
         cursor: pointer;
@@ -44,4 +70,9 @@
   .wrap-btn {
     padding: 10px;
   }
+}
+
+.deadline_priority {
+  display: flex;
+  justify-content: center;
 }
