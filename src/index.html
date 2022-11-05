@@ -21,26 +21,31 @@
             </div>
             <div class="form-part" id="text-area">
               <label for="text">Task text</label>
-              <input type="text" id="text" placeholder="Input you task" />
+              <textarea
+                name="text"
+                id="text"
+                placeholder="Input you task"
+              ></textarea>
+              <!-- <textarea type="text" id="text" placeholder="Input you task"/> -->
             </div>
             <div class="form-part" id="responsible">
               <label for="responsible">Responsible person</label>
               <input type="text" id="responsible" placeholder="Input someone" />
             </div>
-            <div class="deadline_priority">
-              <div class="form-part">
-                <label for="date">Deadline</label>
-                <input id="date" type="date" />
-              </div>
-              <div class="form-part">
-                <label for="priority">Priority</label>
-                <select name="priority" id="priority" form="task-form" size="">
-                  <option value="high">high</option>
-                  <option value="medium">medium</option>
-                  <option value="low">low</option>
-                </select>
-              </div>
+            <!-- <div class="deadline_priority"> -->
+            <div class="form-part">
+              <label for="date">Deadline</label>
+              <input id="date" type="date" />
             </div>
+            <div class="form-part">
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority" form="task-form" size="">
+                <option value="high">high</option>
+                <option value="medium">medium</option>
+                <option value="low">low</option>
+              </select>
+            </div>
+            <!-- </div> -->
           </form>
         </div>
         <div class="wrap-btn">

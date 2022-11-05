@@ -22,7 +22,7 @@ BTN_EXIT_TASK_FORM.addEventListener("click", () => {
 
 const BTN_ADD_TASK = document.querySelector(".btn-input");
 
-const TASK_TEXT = document.querySelector("input#text");
+const TASK_TEXT = document.querySelector("textarea#text");
 const TASK_RESPONSIBLE = document.querySelector("input#responsible");
 const TASK_DATE = document.querySelector("input#date");
 const TASK_PRIOR = document.querySelector("select#priority");
@@ -42,8 +42,6 @@ function createTask(id, text, responsible, date, priority) {
 }
 
 function addToDo() {
-  TABLES.classList.toggle("nonactive");
-
   res = findNum();
   if (res) {
     num = res;
@@ -83,6 +81,8 @@ function addToDo() {
         taskPriority
       );
       toDoTasks.set(num, newTask);
+
+      TABLES.classList.toggle("nonactive");
 
       TASK_TEXT.value = "";
       TASK_RESPONSIBLE.value = "";

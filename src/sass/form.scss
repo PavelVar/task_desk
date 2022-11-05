@@ -20,40 +20,43 @@
       padding: 10px;
       margin: auto;
       width: 80%;
-      background-color: hsla(29, 94%, 50%, 0.726);
+      background-color: rgba(17, 25, 40, 0.75);
       // display: flex;
       // justify-content: space-around;
       border-radius: 10px;
 
       .form-part {
         margin-bottom: 20px;
+        text-align: center;
 
         #text {
           width: 90%;
           height: 90%;
+          font-size: 20px;
+          border-radius: 5px;
         }
 
         label {
           display: block;
+          font-size: 18px;
         }
         input {
           font-size: 20px;
-          border-radius: 10px;
+          border-radius: 5px;
           padding: 5px;
         }
         select {
           font-size: 20px;
-          border-radius: 10px;
+          border-radius: 5px;
           padding: 5px;
         }
       }
+
       .form-part#text-area {
-        text-align: center;
         height: 80px;
         margin-bottom: 30px;
       }
       .form-part#responsible {
-        text-align: center;
         height: 80px;
         margin-bottom: 10px;
       }
@@ -72,7 +75,7 @@
   }
 }
 
-.deadline_priority {
-  display: flex;
-  justify-content: center;
-}
+// .deadline_priority {
+//   display: flex;
+//   justify-content: center;
+// }
