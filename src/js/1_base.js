@@ -1,6 +1,7 @@
 import { addTask } from "./2_add_tasks";
 import { getDataFromLocalStorage } from "./8_get_local_storage.js";
 import { findNum } from "./9_num.js";
+import { drag, dragover, dragleave, dragdrop, dragenter } from "./10_drag.js";
 
 // Getting button to open task-add-form, task-add-form, button to exit task-add-form and table-desk
 const BTN_START_ADD_TASK = document.querySelector(".btn-start");
@@ -93,6 +94,8 @@ function addToDo() {
 
       FORM_ADD_TASK.classList.toggle("active");
       BTN_START_ADD_TASK.classList.toggle("active");
+
+      drag();
     }
   }
 }
@@ -100,3 +103,17 @@ function addToDo() {
 getDataFromLocalStorage();
 
 BTN_ADD_TASK.onclick = addToDo;
+
+export const TasksLists = document.querySelectorAll(".table");
+
+for (let table of TasksLists) {
+  table.addEventListener("dragover", dragover);
+
+  table.addEventListener("drop", dragdrop);
+
+  table.addEventListener("dragenter", dragenter);
+
+  table.addEventListener("dragleave", dragleave);
+}
+
+drag();
