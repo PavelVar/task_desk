@@ -104,7 +104,7 @@ getDataFromLocalStorage();
 
 BTN_ADD_TASK.onclick = addToDo;
 
-export const TasksLists = document.querySelectorAll(".table");
+export const TasksLists = document.querySelectorAll(".tasks");
 
 for (let table of TasksLists) {
   table.addEventListener("dragover", dragover);

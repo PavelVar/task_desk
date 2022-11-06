@@ -7,7 +7,7 @@ export function renderTemplate(task, place) {
     color = "lime";
   }
 
-  const htmlForAll = `<div class="task">
+  const htmlForAll = `<div class="task" data-id=${task.id}>
                         <div class="task-wrap">
                           <div class="task-number" data-elid=${task.id}>
                             <span data-elid=${task.id}>${task.id}</span>
